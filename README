@@ -13,4 +13,4 @@ TODO :
 - [] Train the NN to evaluate the board
 - [] Use Monte-Carlo tree search
 - [] Train the engine with is own games
-- [] Use a NN to prune the tree ? 
+- [] Use a NN to prune the tree ?
