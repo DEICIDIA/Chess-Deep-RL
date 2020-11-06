@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    <title>Chess</title>
+</head>
+
+<html lang="en">
+  <body>
+    {% extends 'base.html' %}
+    {% block content %}
+    <h1>
+      <img src="{{ user_image }}">
+    </h1>
+    {% endblock %}
+
+  </body>
+</html>

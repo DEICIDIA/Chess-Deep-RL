@@ -1,0 +1,31 @@
+(6) Pieces :
+	King
+	Queen
+	Knight
+	rook
+	Pawn
+	bishop
+
+Visualization of the game with JavaScript library ?
+
+Search Tree -> alpha-beta / Monte-Carlo ?
+
+Do I use a NN to prune the search tree ?
+	One for the depth and one for the width ?
+
+Evaluation function :
+
+	PAWN MATRIX =
+
+	[[0, 0, 0, 0, 0, 0, 0, 0],
+	 [-1, -1, -1, -1, -1, -1, -1, -1],
+	 [0, 0, 0, 0, 0, 0, 0, 0],
+	 [0, 0, 0, 0, 0, 0, 0, 0],
+	 [0, 0, 0, 0, 0, 0, 0, 0],
+	 [0, 0, 0, 0, 0, 0, 0, 0],
+	 [1, 1, 1, 1, 1, 1, 1, 1],
+	 [0, 0, 0, 0, 0, 0, 0, 0]]
+
+	NN take in entry :
+				6*64 -> 1
+	NN trained on labeled dataset or trained on his games ?
