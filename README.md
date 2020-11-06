@@ -1,4 +1,4 @@
-# Chess AI using maybe NN and I hope to apply deep reinforcement learning
+# DEEP REINFORCEMENT LEARNING APPLIED TO CHESS (maybe)
 
 
 
