@@ -1,4 +1,3 @@
-from flask import Flask, render_template
 import chess
 import sys
 import random
@@ -6,10 +5,9 @@ import chess.svg
 import train
 import chess.pgn
 import webbrowser
-import app
-from flask import Markup
+from flask import Flask, Response, request, render_template
 
-webbrowser.open('http://127.0.0.1:5000/', new=2)
+#webbrowser.open('http://127.0.0.1:5000/', new=2)
 pgn = open("data/db_1.pgn")
 first_game = chess.pgn.read_game(pgn)
 board = first_game.board()
@@ -19,6 +17,14 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html', img=Markup(img))
+    return render_template('index.html')
+    
 
-app.run()
+
+
+
+
+
+
+
+app.run(debug=True)
