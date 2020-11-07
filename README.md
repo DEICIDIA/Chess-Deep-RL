@@ -5,7 +5,7 @@
 ## TODO :
 
 - [X] Use Flask to visualize the game
-- [ ] Move the pieces
+- [X] Move the pieces
 - [X] Download a dataset to train the valuation function
 - [X] Install TF or Torch
 - [ ] Install ROCM
