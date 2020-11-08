@@ -19,7 +19,7 @@
 
     <div class="multi-button">
         <button id="startPositionBtn" onclick=newGame()>restart</button>
-        <button>vs ia</button>
+        <button onclick=next()>vs ia</button>
     </div>
 
     <script type="text/javascript">
@@ -66,6 +66,12 @@
 
         function newGame() {
             $('#startPositionBtn').on('click', board.start)
+        }
+
+        function next() {
+            $.get('/move', function(r) {
+                board.position(r)
+            });
         }
     </script>
 
