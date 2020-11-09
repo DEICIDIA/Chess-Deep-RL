@@ -51,6 +51,7 @@
 
 			var promotion = piece.toLowerCase().charAt(1) == 'p' && parseInt(target.charAt(1)) == 8;
 			$.post( "/move", {source: source, target: target, piece: piece});
+			console.log("wtf")
 			// $.get('/move_coordinates', {
 			// 	'from': get_square(source),
 			// 	'to': get_square(target),
