@@ -26,11 +26,9 @@ def move():
 
   if move in board.legal_moves:
     board.push(move)
-  else:    
-    return app.response_class(response = board.fen())
-
-  print(board)
-
+  elif board.is_checkmate:
+    app.response_class(response = "over")
+  
   reponse = app.response_class(response = board.fen(), status=200)
   return reponse
 

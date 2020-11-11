@@ -1,5 +1,9 @@
 /*! chessboard.js v0.3.0 | (c) 2013 Chris Oakman | MIT License chessboardjs.com/license */
 
+.body {
+    background: #404040;
+}
+
 .clearfix-7da63 {
     clear: both
 }

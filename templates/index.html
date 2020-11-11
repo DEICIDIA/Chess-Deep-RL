@@ -12,13 +12,15 @@
 
 </head>
 
-<body style="font-size: 20px;">
+<body style="font-size: 20px; background-color: #312e2b;">
 
-    <div id="board" style="width: 600px"></div>
-    <p></p>
 
-    <div class="multi-button">
+
+    <div>
         <button id="startPositionBtn" onclick=newGame()>restart</button>
+        <center>
+            <div id="board" style="width:45%;"></div>
+        </center>
     </div>
 
     <script type="text/javascript">
@@ -52,7 +54,11 @@
                 'from': get_square(source),
                 'to': get_square(target)
             }, function(r) {
-                board.position(r)
+                if (r.includes('over')) {
+                    console.log("game over")
+                } else {
+                    board.position(r)
+                }
             });
         }
 
