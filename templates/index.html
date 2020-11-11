@@ -25,7 +25,7 @@
         var board = ChessBoard('board', {
             position: 'start',
             draggable: true,
-            onDrop: onDrop
+            onDrop: onDrop,
         });
 
         var files = {
@@ -45,13 +45,14 @@
 
         function onDrop(source, target, piece) {
 
+            console.log(source)
+            console.log(target)
+
             $.get('/move', {
                 'from': get_square(source),
                 'to': get_square(target)
             }, function(r) {
-
-                board.move(r)
-
+                board.position(r)
             });
         }
 

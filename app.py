@@ -13,25 +13,25 @@ app = Flask(__name__)
 
 board = chess.Board()
 
-def computer_move():
-	return random.choice(board.legal_moves)
-
 @app.route('/')
 def index():
     return render_template('index.html')
 
 @app.route('/move')
 def move():
-  target = (request.args.get('to', default=''))
-  source = (request.args.get('from', default=''))
 
-  print("source : ", source)
-  print("target : ", target)
-  
+  target = int(request.args.get('to', default=''))
+  source = int(request.args.get('from', default=''))  
+  move = chess.Move(source, target)
 
+  if move in board.legal_moves:
+    board.push(move)
+  else:    
+    return app.response_class(response = board.fen())
 
-  reponse = app.response_class(response = 'b1-b1', status=200)
+  print(board)
 
+  reponse = app.response_class(response = board.fen(), status=200)
   return reponse
 
 @app.route("/newgame")
