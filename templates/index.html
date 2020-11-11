@@ -19,7 +19,6 @@
 
     <div class="multi-button">
         <button id="startPositionBtn" onclick=newGame()>restart</button>
-        <button onclick=next()>vs ia</button>
     </div>
 
     <script type="text/javascript">
@@ -29,9 +28,30 @@
             onDrop: onDrop
         });
 
-        function onDrop() {
-            $.get('/move', function(r) {
+        var files = {
+            "a": 0,
+            "b": 1,
+            "c": 2,
+            "d": 3,
+            "e": 4,
+            "f": 5,
+            "g": 6,
+            "h": 7
+        };
+
+        function get_square(sq) {
+            return 8 * (parseInt(sq.charAt(1)) - 1) + files[sq.charAt(0)];
+        }
+
+        function onDrop(source, target, piece) {
+
+            $.get('/move', {
+                'from': get_square(source),
+                'to': get_square(target)
+            }, function(r) {
+
                 board.move(r)
+
             });
         }
 

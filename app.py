@@ -22,8 +22,17 @@ def index():
 
 @app.route('/move')
 def move():
-	reponse = app.response_class(response = 'b1-c3', status=200)
-	return reponse
+  target = (request.args.get('to', default=''))
+  source = (request.args.get('from', default=''))
+
+  print("source : ", source)
+  print("target : ", target)
+  
+
+
+  reponse = app.response_class(response = 'b1-b1', status=200)
+
+  return reponse
 
 @app.route("/newgame")
 def newgame():
