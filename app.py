@@ -26,9 +26,10 @@ def move():
 
   if move in board.legal_moves:
     board.push(move)
-  
-  reponse = app.response_class(response = board.fen(), status=200)
+    board.push(random.choice(list(board.legal_moves)))
+
   print(board)
+  reponse = app.response_class(response = board.fen(), status = 200)
   return reponse
 
 @app.route("/newgame")
