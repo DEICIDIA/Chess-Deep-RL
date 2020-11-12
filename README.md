@@ -8,7 +8,7 @@
 - [X] Move the pieces
 - [X] Download a dataset to train the valuation function
 - [X] Install TF or Torch
-- [ ] Establish communication between JS and Python 
+- [X] Establish communication between JS and Python 
 - [ ] Play with a random agent 
 - [ ] Install ROCM
 - [ ] Organize and extract valuable information from the data set
