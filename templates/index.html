@@ -28,6 +28,8 @@
             position: 'start',
             draggable: true,
             onDrop: onDrop,
+            orientation: 'black',
+
         });
 
         var files = {
@@ -45,17 +47,26 @@
             return 8 * (parseInt(sq.charAt(1)) - 1) + files[sq.charAt(0)];
         }
 
-        function onDrop(source, target, piece) {
+        // function onDragStart(source, piece, position, orientation) {
+        //     if ((orientation === 'white' && piece.search(/^w/) === -1) ||
+        //         (orientation === 'black' && piece.search(/^b/) === -1)) {
+        //         return false
+        //     }
+        // }
 
-            console.log(source)
-            console.log(target)
+        function onDrop(source, target, piece) {
 
             $.get('/move', {
                 'from': get_square(source),
                 'to': get_square(target)
             }, function(r) {
                 if (r.includes('over')) {
+
                     console.log("game over")
+
+                    function onDragStart() {
+                        return false;
+                    }
                 } else {
                     board.position(r)
                 }

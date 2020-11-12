@@ -26,10 +26,9 @@ def move():
 
   if move in board.legal_moves:
     board.push(move)
-  elif board.is_checkmate:
-    app.response_class(response = "over")
   
   reponse = app.response_class(response = board.fen(), status=200)
+  print(board)
   return reponse
 
 @app.route("/newgame")
