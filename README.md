@@ -9,7 +9,7 @@
 - [X] Download a dataset to train the valuation function
 - [X] Install TF or Torch
 - [X] Establish communication between JS and Python 
-- [ ] Play with a random agent 
+- [X] Play with a random agent 
 - [ ] Install ROCM
 - [ ] Organize and extract valuable information from the data set
 - [ ] Train the NN to evaluate the board
